@@ -25,7 +25,7 @@ const Auth = () => {
                 </form>
             </div>
             <div id="signIn">
-                <h3>Sign Up</h3>
+                <h3>Log in</h3>
                 <form>
                     <label>Username</label>
                     <br />
