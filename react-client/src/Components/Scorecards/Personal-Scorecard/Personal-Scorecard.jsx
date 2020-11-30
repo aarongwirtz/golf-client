@@ -6,11 +6,19 @@ const PersonalScorecard = () => {
     const [results, setResults] = useState([])
 
     const fetchResults = () => {
-        let url = `http://localhost:3000/scorecard/${userName}`
+        let url = `http://localhost:3000/scorecard/testBoy`
 
         setUserName('testBoy');
         console.log(userName)
-        fetch(url)
+
+        fetch(url, {
+            method: 'GET',
+            
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NzUyOTI3LCJleHAiOjE2MDY4MzkzMjd9.8yDkVpSyj6XUl8eeMETMihxAeM6WKcjXiJGfbkXwtDA'
+            }
+        })
             .then(res => res.json())
             .then(data => console.log(data))
             .catch(err => console.log(err))
