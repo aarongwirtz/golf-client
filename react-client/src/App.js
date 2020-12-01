@@ -13,6 +13,7 @@ import Navbar from './Components/Navbar/Navbar';
 
 function App() {
 
+
   // letting the token get a value upon login
   const [sessionToken, setSessionToken] = useState('');
   
@@ -42,9 +43,9 @@ function App() {
       </Router>
         <Auth updateToken={updateToken}/>
         <CommunityScorecard />
-        {/* <CreateScorecard />
+        {/* <CreateScorecard /> */}
         <PersonalScorecard />
-        <PreScorecard /> */}
+        {/* <PreScorecard /> */}
     </div>
   );
 }
