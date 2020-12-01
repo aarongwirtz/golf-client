@@ -3,6 +3,7 @@ import './App.css';
 import'bootstrap/dist/css/bootstrap.css';
 import Auth from './Components/Auth/Auth';
 import Navbar from './Components/Navbar/Navbar';
+import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Personal-Scorecard';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 
@@ -43,10 +44,6 @@ function App() {
           <Navbar token={sessionToken} clickLogout={clearToken}/>
       </Router>
         <Auth updateToken={updateToken}/>
-        {/* <CommunityScorecard /> */}
-        {/* <CreateScorecard /> */}
-        {/* <PersonalScorecard /> */}
-        {/* <PreScorecard /> */}
     </div>
   );
 }
