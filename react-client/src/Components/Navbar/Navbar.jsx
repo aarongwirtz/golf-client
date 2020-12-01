@@ -8,6 +8,7 @@ import {
 import CommunityScorecard from '../Scorecards/Community-Scorecard/Community-Scorecard';
 import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scorecard';
 import logo from '../../assets/tgLogo.png';
+import CreateScorecard from '../Scorecards/Create-Scorecard/Create-Scorecard';
 // import logout
 
 const Navbar = (props) => {
@@ -26,6 +27,7 @@ const Navbar = (props) => {
                 <Switch>
                     <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
                     <Route exact path="/PersonalScorecard"><PersonalScorecard token={props.token}/></Route>
+                    <Route exact path="/CreateScorecard"><CreateScorecard /></Route>
                 </Switch>
             </div>
         </div>
