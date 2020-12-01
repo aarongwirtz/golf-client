@@ -8,6 +8,7 @@ import {
 import CommunityScorecard from '../Scorecards/Community-Scorecard/Community-Scorecard';
 import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scorecard';
 import logo from '../../assets/tgLogo.png';
+// import logout
 
 const Navbar = () => {
     return (
@@ -17,6 +18,7 @@ const Navbar = () => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
+                    {/* link to logout.jsx */}
                 </ul>
             </div>
             <div className="navbar-route">
