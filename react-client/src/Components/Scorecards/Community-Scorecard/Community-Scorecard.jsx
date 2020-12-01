@@ -5,14 +5,14 @@ import React, { useState , useEffect} from 'react';
 
 const CommunityScorecard = (props) => {
     const [results, setResults] = useState([]);
-
+    
     useEffect (()=> {
             fetch('http://localhost:3000/scorecard/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': props.token
-
+    
                 }
             })
 
@@ -34,6 +34,7 @@ const CommunityScorecard = (props) => {
                                 <h6>{result.difficultyRating}</h6>
                                 <p>{result.date}</p>
                                 <p>{result.conditions}</p>
+                                <p>{result.userName}</p>
                                 <table>
                                 <tbody>
                                 <tr>
