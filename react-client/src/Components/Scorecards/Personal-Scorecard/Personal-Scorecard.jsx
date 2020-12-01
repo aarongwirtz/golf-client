@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 
 const PersonalScorecard = (props) => {
-    const[username, setUsername] = useState('');
+    const[username, setUsername] = useState('t2');
     const[results, setResults] = useState([])
 
     useEffect(() => {
