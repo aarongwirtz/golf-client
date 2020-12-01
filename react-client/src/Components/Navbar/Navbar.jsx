@@ -10,7 +10,7 @@ import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scoreca
 import logo from '../../assets/tgLogo.png';
 // import logout
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div className="navbar">
             <div className="navbar-list-styling">
@@ -23,8 +23,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-route">
                 <Switch>
-                    <Route exact path="/CommunityScorecard"><CommunityScorecard /></Route>
-                    <Route exact path="/PersonalScorecard"><PersonalScorecard /></Route>
+                    <Route exact path="/CommunityScorecard"><CommunityScorecard props={props.token}/></Route>
+                    <Route exact path="/PersonalScorecard"><PersonalScorecard props={props.token}/></Route>
                 </Switch>
             </div>
         </div>
