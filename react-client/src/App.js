@@ -12,11 +12,11 @@ function App() {
 
 
   // letting the token get a value upon login
-  const [sessionToken, setSessionToken] = useState('undefined');
+  const [sessionToken, setSessionToken] = useState(undefined);
   
   //method meant to change view based on if there is a session token
   const viewConductor = () => {
-    return sessionToken === undefined?  <Auth updateToken={updateToken}/> : <PersonalScorecard token={sessionToken} />
+    return sessionToken === undefined ?  <Auth updateToken={updateToken}/> : <Navbar token={sessionToken} clickLogout={clearToken}/>
   }
 
 
@@ -34,18 +34,25 @@ function App() {
     console.log(sessionToken);
   }
 
+
   const clearToken = () => {
     localStorage.clear();
-    setSessionToken('');
+    setSessionToken(undefined);
   }
 
   return (
     <div className="App">
       <Router>
-          <Navbar token={sessionToken} clickLogout={clearToken}/>
+        {viewConductor()}
+          {/* <Navbar token={sessionToken} clickLogout={clearToken}/> */}
       </Router>
         {/* <Auth updateToken={updateToken}/> */}
         <CreateScorecard />
+        {/* <CommunityScorecard /> */}
+        {/* <CreateScorecard /> */}
+        {/* <PersonalScorecard /> */}
+        {/* <PreScorecard /> */}
+
     </div>
   );
 }

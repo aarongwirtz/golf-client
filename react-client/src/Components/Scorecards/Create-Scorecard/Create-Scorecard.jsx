@@ -52,6 +52,7 @@ const CreateScorecard = () => {
                 <input value="Hole 17 Score" />
                 <input value="Hole 18 Score" />
             </form>
+
         </div>
      </div>
  )  ; 
