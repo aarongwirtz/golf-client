@@ -2,7 +2,7 @@
     padding: 1em;
 }
 .navbar-list-styling{
-    
+    background-color: white;    
 }
 .navbar-list{
     list-style: none;
@@ -13,8 +13,8 @@
     padding-left: 1em;
 }
 .list-unstyled{
-
+    background-color: white
 }
 .sidebar-route{
-    
+    background-color: white
 }
