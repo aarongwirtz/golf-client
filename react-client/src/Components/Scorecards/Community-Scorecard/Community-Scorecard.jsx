@@ -1,8 +1,5 @@
 import React, { useState , useEffect} from 'react';
-// import {
-//     Card, CardImg, CardText, CardBody,
-//     CardTitle, CardSubtitle, Button
-//   } from 'reactstrap';
+
 
 
 
@@ -15,14 +12,15 @@ const CommunityScorecard = (props) => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': props.token
+
                 }
             })
+
                 .then(res => res.json())
                 .then(data => {
                     setResults(data);
                     console.log(data);
                 })
-                
                 .catch(err => console.log(err));
     }, [])
         return (
