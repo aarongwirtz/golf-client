@@ -19,6 +19,7 @@ const Navbar = (props) => {
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
                     {/* link to logout.jsx */}
+                    <li><Link to="/Auth"><button onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
             </div>
             <div className="navbar-route">

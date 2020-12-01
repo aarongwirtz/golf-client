@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-          <Navbar token={sessionToken}/>
+          <Navbar token={sessionToken} clickLogout={clearToken}/>
       </Router>
         <Auth updateToken={updateToken}/>
         {/* <CommunityScorecard /> */}
