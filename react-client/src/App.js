@@ -10,8 +10,14 @@ function App() {
 
 
   // letting the token get a value upon login
-  const [sessionToken, setSessionToken] = useState('');
+  const [sessionToken, setSessionToken] = useState('undefined');
   
+  //method meant to change view based on if there is a session token
+  const viewConductor = () => {
+    return sessionToken === undefined?  <Auth updateToken={updateToken}/> : <PersonalScorecard token={sessionToken} />
+  }
+
+
   // updating the token if the browser has stored one
   useEffect(() => {
     if (localStorage.getItem('token')){
@@ -34,9 +40,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-          <Navbar token={sessionToken}/>
+          <Navbar token={sessionToken} clickLogout={clearToken}/>
       </Router>
         <Auth updateToken={updateToken}/>
+        {/* <CommunityScorecard /> */}
+        {/* <CreateScorecard /> */}
+        {/* <PersonalScorecard /> */}
+        {/* <PreScorecard /> */}
     </div>
   );
 }

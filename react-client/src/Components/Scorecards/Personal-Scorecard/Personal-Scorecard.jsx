@@ -19,7 +19,7 @@ const PersonalScorecard = (props) => {
             setResults(data)
             console.log(data)
         })
-        .catch(err => err)
+        .catch(err => console.log(err))
     }, [])
     
     
@@ -34,6 +34,7 @@ const PersonalScorecard = (props) => {
                         <h6>Difficulty: {result.difficultyRating}</h6>
                         <p>{result.date}</p>
                         <p>{result.conditions}</p>
+                        <p>{result.userName}</p>
                         <table>
                             <tbody>
                                 <tr>
