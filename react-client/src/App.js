@@ -8,15 +8,20 @@ import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Person
 import PreScorecard from './Components/Scorecards/Pre-Scorecard/Pre-Scorecard';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar';
 
 
 function App() {
 
 
   // letting the token get a value upon login
-  const [sessionToken, setSessionToken] = useState('');
+  const [sessionToken, setSessionToken] = useState('undefined');
   
+  //method meant to change view based on if there is a session token
+  const viewConductor = () => {
+    return sessionToken === undefined?  <Auth updateToken={updateToken}/> : <PersonalScorecard token={sessionToken} />
+  }
+
+
   // updating the token if the browser has stored one
   useEffect(() => {
     if (localStorage.getItem('token')){
@@ -39,12 +44,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-          <Navbar />
+          <Navbar token={sessionToken}/>
       </Router>
         <Auth updateToken={updateToken}/>
-        <CommunityScorecard />
+        {/* <CommunityScorecard /> */}
         {/* <CreateScorecard /> */}
-        <PersonalScorecard />
+        {/* <PersonalScorecard /> */}
         {/* <PreScorecard /> */}
     </div>
   );
