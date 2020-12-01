@@ -25,8 +25,9 @@ const PersonalScorecard = (props) => {
     }, [])
     
     const viewConductor = () => {
-        return results === []?  <PreScorecard /> : <ChildScorecard results={results} />
-      }
+        console.log(results)
+        return results !== [] ?  <ChildScorecard results={results} /> : <PreScorecard />
+    }
     
     
 
