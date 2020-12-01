@@ -8,7 +8,7 @@ import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Person
 import PreScorecard from './Components/Scorecards/Pre-Scorecard/Pre-Scorecard';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter as Router} from 'react-router-dom';
-
+import Navbar from './Components/Navbar/Navbar';
 
 
 function App() {
@@ -42,9 +42,9 @@ function App() {
       </Router>
         <Auth updateToken={updateToken}/>
         <CommunityScorecard />
-        <CreateScorecard />
+        {/* <CreateScorecard />
         <PersonalScorecard />
-        <PreScorecard />
+        <PreScorecard /> */}
     </div>
   );
 }
