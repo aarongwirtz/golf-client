@@ -5,6 +5,7 @@ import Auth from './Components/Auth/Auth';
 import Navbar from './Components/Navbar/Navbar';
 import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Personal-Scorecard';
 import {BrowserRouter as Router} from 'react-router-dom';
+import CreateScorecard from '../src/Components/Scorecards/Create-Scorecard/Create-Scorecard';
 
 
 function App() {
@@ -43,7 +44,8 @@ function App() {
       <Router>
           <Navbar token={sessionToken} clickLogout={clearToken}/>
       </Router>
-        <Auth updateToken={updateToken}/>
+        {/* <Auth updateToken={updateToken}/> */}
+        <CreateScorecard />
     </div>
   );
 }
