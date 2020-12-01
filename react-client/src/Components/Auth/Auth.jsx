@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Auth = () => {
+    //set username state in Auth
+
 
     const fetchResults = () => {
         let url = `http://localhost:3000/user/login`
-
-        const proxyurl = "https://crossorigin.me/"
 
         fetch(url, {
             method: 'POST',
