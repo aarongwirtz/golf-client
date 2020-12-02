@@ -11,7 +11,7 @@ import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scoreca
 import logo from '../../assets/tgLogo.png';
 
 const Navbar = (props) => {
-    console.log(props)
+    
     return (
         <div className="navbar">
             <div className="navbar-list-styling">
