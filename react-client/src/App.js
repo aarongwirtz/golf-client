@@ -43,13 +43,11 @@ function App() {
 
   return (
     <div className="App">
+      
       <Router>
         {viewConductor()} 
       </Router>
-        {/* <Auth updateToken={updateToken}/> */}
-        {/* <CreateScorecard /> */}
-        {/* <CommunityScorecard /> */}
-        {/* <PersonalScorecard /> */}
+
     </div>
   );
 }

@@ -3,10 +3,11 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'react
 import './Create-Scorecard.css';
 import APIURL from '../../../helpers/environment';
 
+
 const CreateScorecard = (props) => {
 
     const [course, setCourse] = useState('');
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(''  );
     const [conditions, setConditions] = useState('');
     const [courselength, setCourseLength] = useState('');
     const [difficulty, setDifficulty] = useState('');
@@ -337,8 +338,6 @@ const CreateScorecard = (props) => {
                     <Button className="submit">Submit Your Score</Button>
                 </Form>
 </div>
-
-
 
 
 
