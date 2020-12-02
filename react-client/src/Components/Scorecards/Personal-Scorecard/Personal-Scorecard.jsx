@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PreScorecard from '../Pre-Scorecard/Pre-Scorecard';
 import ChildScorecard from './Personal-Scorecard-child/Personal-Scorecard-Child'
+import APIURL from '../../../helpers/environment';
 
 const PersonalScorecard = (props) => {
     const[username, setUsername] = useState('testBoy');
@@ -9,7 +10,7 @@ const PersonalScorecard = (props) => {
     useEffect(() => {
         
 
-        fetch(`http://localhost:3000/scorecard/mine`,{
+        fetch(`${APIURL}/scorecard/mine`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
