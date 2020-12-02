@@ -2,7 +2,6 @@ import React from 'react'
 
 const ChildScorecard = (props) => {
     console.log(props)
-
     return(
         
         props.results.map((result, index) =>{
@@ -11,8 +10,8 @@ const ChildScorecard = (props) => {
                     <h4>{result.courseName}</h4>
                     <h6>Difficulty: {result.difficultyRating}</h6>
                     <p>Date: {result.date}</p>
-                    <p>{result.conditions}</p>
-                    <p>{result.userName}</p>
+                    <p>Weather Conditions: {result.conditions}</p>
+                    <p>User: {result.userName}</p>
                     <table>
                         <tbody>
                             <tr>
@@ -80,6 +79,8 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
+                    <button>Edit</button>
+                    <button onClick={props.deleteScorecard}>Delete</button>
                 </div>
             )
         }
