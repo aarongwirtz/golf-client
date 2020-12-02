@@ -7,8 +7,10 @@ const CreateScorecard = () => {
         <div className="mainDiv">
             <h1>Create Scorecard</h1>
             <form>
-
+                
+                <label htmlFor="">Course Name</label>
                 <input value="Course Name" />
+                <br />
                 <input value="Date Played" />
                 <input value="Conditions" />
                 <input value="Course Length" />
