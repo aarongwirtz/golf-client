@@ -13,3 +13,27 @@ span.td
 {
     display:table-cell;
 }
+
+#myform{
+    background-color: orange;
+    margin: auto;
+    width: 80%;
+}
+
+#row1{
+    border: 1px solid red;
+    margin: 20px 0 20px 0;
+    
+}
+
+#row2{
+    border: 1px solid blue;
+    margin: 20px 0 20px 0;
+    
+}
+
+#row3{
+    border: 1px solid green;
+    margin: 20px 0 20px 0;
+    
+}
