@@ -44,15 +44,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {viewConductor()}
-          
+        {viewConductor()} 
       </Router>
         {/* <Auth updateToken={updateToken}/> */}
-        <CreateScorecard />
-        {/* <CommunityScorecard /> */}
         {/* <CreateScorecard /> */}
-        <PersonalScorecard />
-        <PreScorecard />
+        {/* <CommunityScorecard /> */}
+        <CreateScorecard />
+        {/* <PersonalScorecard /> */}
+        {/* <PreScorecard /> */}
         
     </div>
   );
