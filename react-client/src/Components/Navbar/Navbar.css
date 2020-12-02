@@ -1,5 +1,7 @@
 .navbar{
     padding: 1em;
+    width: 100%;
+    display: flex;
 }
 .navbar-list-styling{
     background-color: white;    
