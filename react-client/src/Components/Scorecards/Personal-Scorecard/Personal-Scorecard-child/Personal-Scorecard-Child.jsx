@@ -101,7 +101,6 @@ const ChildScorecard = (props) => {
         .then(() => props.fetchPScorecards())
     }
 
-    console.log(props)
     return(
         
         props.results.map((result, index) =>{
@@ -109,6 +108,7 @@ const ChildScorecard = (props) => {
                 <div key={index}>
                     <h4>{result.courseName}</h4>
                     <h6>Difficulty: {result.difficultyRating}</h6>
+                    <p>Length: {result.courseLength}</p>
                     <p>Date: {result.date}</p>
                     <p>Weather Conditions: {result.conditions}</p>
                     <p>User: {result.userName}</p>
@@ -181,7 +181,7 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <button>Edit</button>
+                    <button >Edit</button>
                     <button onClick={() => props.delete(result.id)}>Delete</button>
                 </div>
             )

@@ -6,10 +6,10 @@ import '../Pre-Scorecard/Pre-Scorecard.css';
 const PreScorecard = () => {
 
     return(
-        <div>
+        <div id="preSC">
             <h2>It looks like you haven't created any scorecards yet!</h2>
-            <h3>Click here to create your first scorecard!</h3>
-            <img src={golfer} alt="No Scorecards" />
+            <h4>Click the Create New Scorecard link above to get started.</h4>
+            <img id="golfer" src={golfer} alt="No Scorecards" />
             {/* <CreateScorecard /> */}
             {/* <button><Link to="scorecard/create">Create a Scorecard</Link></button> */}
             {/* <button onClick = {handleClick}>Create a Scorecard!</button> */}

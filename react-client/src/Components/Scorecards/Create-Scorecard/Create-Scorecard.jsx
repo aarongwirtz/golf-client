@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 import './Create-Scorecard.css';
-//import APIURL from '../../../helpers/environment';
+
 
 const CreateScorecard = (props) => {
 
@@ -51,28 +52,75 @@ const CreateScorecard = (props) => {
 
 
     const fetchResults =() => {
-        fetch('http://localhost:3000/scorecard/create', {
+        fetch(`${APIURL}/scorecard/create`, {
             method: 'POST',
-            body: JSON.stringify ({}),
+            body: JSON.stringify ({
+                courseName: course,
+                date: date,
+                conditions: conditions,
+                courseLength: courselength,
+                difficultyRating: difficulty,
+                h1Par: par1,
+                h2Par: par2,
+                h3Par: par3,
+                h4Par: par4,
+                h5Par: par5,
+                h6Par: par6,
+                h7Par: par7,
+                h8Par: par8,
+                h9Par: par9,
+                h10Par: par10,
+                h11Par: par11,
+                h12Par: par12,
+                h13Par: par13,
+                h14Par: par14,
+                h15Par: par15,
+                h16Par: par16,
+                h17Par: par17,
+                h18Par: par18,
+                totalPar: partotal,
+                h1Score: hole1,
+                h2Score: hole2,
+                h3Score: hole3,
+                h4Score: hole4,
+                h5Score: hole5,
+                h6Score: hole6,
+                h7Score: hole7,
+                h8Score: hole8,
+                h9Score: hole9,
+                h10Score: hole10,
+                h11Score: hole11,
+                h12Score: hole12,
+                h13Score: hole13,
+                h14Score: hole14,
+                h15Score: hole15,
+                h16Score: hole16,
+                h17Score: hole17,
+                h18Score: hole18,
+                totalScore: holetotal
+            },
+                ),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             }
          })
     }
-
-         const handleSubmit = (event) => {
+    
+         const submitScore = (event) => {
             fetchResults();
             event.preventDefault();
           }
 
  return (
-     <div className="main">
+     <div className="main"> 
         <div className="mainDiv">
 
             <h1>Create Scorecard</h1>
                 <div id="myform">
-                <Form id="form1" onSubmit={(e) => handleSubmit(e)}>
+                <Form id="form1" 
+                onSubmit={(e) => submitScore(e)}
+                >
                     <Row id="row1">
                         <Col>
                             <Label for="CourseName">Course Name</Label>
@@ -287,7 +335,7 @@ const CreateScorecard = (props) => {
                             <Input name="Hole Total" type="text" onChange={(e) => setHoleTotal(e.target.value)}/>
                         </Col>
                     </Row>
-                    {/* <Button onSubmit={(e) => {submitScore}}>Submit Your Score</Button> */}
+                    <Button className="submit">Submit Your Score</Button>
                 </Form>
 </div>
 
