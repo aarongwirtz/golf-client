@@ -50,6 +50,7 @@ const CreateScorecard = (props) => {
     const [holetotal, setHoleTotal] = useState('');
 
 
+
     const fetchResults =() => {
         fetch('http://localhost:3000/scorecard/create', {
             method: 'POST',
@@ -71,7 +72,9 @@ const CreateScorecard = (props) => {
 
             <h1>Create Scorecard</h1>
                 <div id="myform">
-                <Form id="form1" onSubmit={(e) => handleSubmit(e)}>
+                <Form id="form1" 
+                // onSubmit={(e) => handleSubmit(e)}
+                >
                     <Row id="row1">
                         <Col>
                             <Label for="CourseName">Course Name</Label>
