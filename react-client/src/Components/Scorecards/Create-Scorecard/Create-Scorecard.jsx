@@ -3,7 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'react
 import './Create-Scorecard.css';
 import APIURL from '../../../helpers/environment';
 
-const CreateScorecard = () => {
+const CreateScorecard = (props) => {
 
     const [course, setCourse] = useState('');
     const [date, setDate] = useState(''  );
@@ -51,6 +51,7 @@ const CreateScorecard = () => {
 
 
 
+    const fetchResults =() => {
         fetch('http://localhost:3000/scorecard/create', {
             method: 'POST',
             headers: {
@@ -58,7 +59,8 @@ const CreateScorecard = () => {
                 'Authorization': props.token
             }
          })
-
+    }
+    
          const handleSubmit = (event) => {
             fetchResults();
             event.preventDefault();
