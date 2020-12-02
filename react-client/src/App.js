@@ -47,7 +47,7 @@ function App() {
         {viewConductor()} 
       </Router>
         {/* <Auth updateToken={updateToken}/> */}
-        <CreateScorecard />
+        {/* <CreateScorecard /> */}
         {/* <CommunityScorecard /> */}
         {/* <PersonalScorecard /> */}
     </div>
