@@ -32,7 +32,7 @@ const Navbar = (props) => {
                     </Route>
                     <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
                     <Route exact path="/PersonalScorecard"><PersonalScorecard token={props.token}/></Route>
-                    <Route exact path="/CreateScorecard"><CreateScorecard /></Route>
+                    <Route exact path="/CreateScorecard"><CreateScorecard token={props.token}/></Route>
                 </Switch>
             </div>
         </div>
