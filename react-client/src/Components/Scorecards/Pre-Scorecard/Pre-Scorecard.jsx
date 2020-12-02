@@ -1,6 +1,6 @@
 import React from 'react';
 import golfer from '../../../assets/golfer.jpg';
-
+import './Pre-Scorecard.css'
 
 const PreScorecard = () => {
 
@@ -8,7 +8,7 @@ const PreScorecard = () => {
         <div>
             <h2>It looks like you haven't created any scorecards yet!</h2>
             <p>Hello</p>
-            <img src={golfer} alt="No Scorecards" />
+            <img id="golfer" src={golfer} alt="No Scorecards" />
 
         </div>
     )

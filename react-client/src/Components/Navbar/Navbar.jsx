@@ -8,7 +8,9 @@ import {
 } from 'react-router-dom';
 import CommunityScorecard from '../Scorecards/Community-Scorecard/Community-Scorecard';
 import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scorecard';
+import CreateScorecard from '../Scorecards/Create-Scorecard/Create-Scorecard';
 import logo from '../../assets/tgLogo.png';
+import Auth from '../Auth/Auth';
 
 const Navbar = (props) => {
     
@@ -19,6 +21,7 @@ const Navbar = (props) => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
+                    <li><Link to="/CreateScorecard">Create Scorecard</Link></li>
                     <li><Link to="/"><button onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
             </div>
@@ -27,6 +30,9 @@ const Navbar = (props) => {
                     <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
                     <Route exact path="/PersonalScorecard"><PersonalScorecard token={props.token}/></Route>
                     <Route exact path="/CreateScorecard"><CreateScorecard /></Route>
+                    <Route exact path="/">
+                    {props.token !== undefined ? <Redirect to="/PersonalScorecard" /> : <Auth />}
+                    </Route>
                 </Switch>
             </div>
         </div>
