@@ -38,8 +38,8 @@ const Register = (props) => {
                 </FormGroup>
 
                 <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                    <Label htmlFor="password" type="password">Password</Label>
+                    <Input onChange={(e) => setPassword(e.target.value)} value={password} />
                 </FormGroup>
 
                 <Button type="submit">Login</Button>

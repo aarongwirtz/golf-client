@@ -5,6 +5,10 @@ const CreateScorecard = () => {
  return (
      <div className="main">
         <div className="mainDiv">
+<<<<<<< HEAD
+            <p>Create Scorecard Component</p>
+            <h1>hello keagan</h1>
+=======
             <h1>Create Scorecard</h1>
             <form>
                 
@@ -55,6 +59,7 @@ const CreateScorecard = () => {
                 <input value="Hole 18 Score" />
             </form>
 
+>>>>>>> e41ccd976584be58c596df9a067a90dad40812c6
         </div>
      </div>
  )  ; 
