@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 import './Create-Scorecard.css';
-//import APIURL from '../../../helpers/environment';
+
 
 const CreateScorecard = (props) => {
 
@@ -50,9 +51,8 @@ const CreateScorecard = (props) => {
     const [holetotal, setHoleTotal] = useState('');
 
 
-
     const fetchResults =() => {
-        fetch('http://localhost:3000/scorecard/create', {
+        fetch(`${APIURL}/scorecard/create`, {
             method: 'POST',
             body: JSON.stringify ({
                 courseName: course,
