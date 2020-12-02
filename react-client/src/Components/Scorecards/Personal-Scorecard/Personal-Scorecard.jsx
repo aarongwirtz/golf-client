@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PreScorecard from '../Pre-Scorecard/Pre-Scorecard';
 import ChildScorecard from './Personal-Scorecard-child/Personal-Scorecard-Child'
 import APIURL from '../../../helpers/environment';
+import '../Personal-Scorecard/Personal-Scorecard.css'
 
 
 const PersonalScorecard = (props) => {

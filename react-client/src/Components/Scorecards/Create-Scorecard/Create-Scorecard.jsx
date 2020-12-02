@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import APIURL from '../../../helpers/environment';
 import './Create-Scorecard.css';
+import APIURL from '../../../helpers/environment';
 
 
 const CreateScorecard = (props) => {
 
     const [course, setCourse] = useState('');
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(''  );
     const [conditions, setConditions] = useState('');
     const [courselength, setCourseLength] = useState('');
     const [difficulty, setDifficulty] = useState('');
@@ -119,7 +119,7 @@ const CreateScorecard = (props) => {
             <h1>Create Scorecard</h1>
                 <div id="myform">
                 <Form id="form1" 
-                onSubmit={(e) => submitScore(e)}
+                    onSubmit={(e) => submitScore(e)}
                 >
                     <Row id="row1">
                         <Col>
@@ -338,8 +338,6 @@ const CreateScorecard = (props) => {
                     <Button className="submit">Submit Your Score</Button>
                 </Form>
 </div>
-
-
 
 
 

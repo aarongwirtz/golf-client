@@ -1,22 +1,38 @@
 .navbar{
-    padding: 1em;
-    width: 100%;
-    display: flex;
+    padding-top: 1em;
+    text-align: center;
 }
-.navbar-list-styling{
-    background-color: white;    
-}
+
+.logo {
+    vertical-align: middle;
+}   
+
 .navbar-list{
     list-style: none;
     display: flex;
     font-size: 1.5em;
 }
-.navbar-list li{
-    padding-left: 1em;
+
+.navbar-list li {
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.list-unstyled{
-    background-color: white
+
+.navbar-list a {
+    color: #44a247;
+    text-emphasis: bold;
 }
-.sidebar-route{
-    background-color: white
+
+.logoutBtn {
+    background-color: #c9aa79;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-weight: bold;  
+    border: none;
+    text-align: center;
+}
+
+.navbar-route {
+    display: block;
+    align-items: center;
 }

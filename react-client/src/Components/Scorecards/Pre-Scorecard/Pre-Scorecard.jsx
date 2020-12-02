@@ -1,16 +1,16 @@
 import React from 'react';
 import golfer from '../../../assets/golfer.jpg';
-import '../Pre-Scorecard/Pre-Scorecard.css';
+import '../Pre-Scorecard/Pre-Scorecard.css'
 
 const PreScorecard = () => {
 
-    return(
-        <div id="preSC">
-            <h2>It looks like you haven't created any scorecards yet!</h2>
-            <h4>Click the Create New Scorecard link above to get started.</h4>
+    return (
+        <div>
+            <h4>You haven't created any Scorecards yet!</h4>
+            <p>Click the Create New Scorecard link above to get started.</p>
             <img id="golfer" src={golfer} alt="No Scorecards" />
         </div>
     )
-}
+};
 
 export default PreScorecard;
