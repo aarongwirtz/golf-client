@@ -2,7 +2,6 @@ import React from 'react';
 import './Create-Scorecard.css';
 //import APIURL from '../../../helpers/environment';
 
-
 const CreateScorecard = () => {
  return (
      <div className="main">

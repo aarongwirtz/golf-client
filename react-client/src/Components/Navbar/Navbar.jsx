@@ -11,10 +11,9 @@ import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scoreca
 import logo from '../../assets/tgLogo.png';
 import CreateScorecard from '../Scorecards/Create-Scorecard/Create-Scorecard';
 import Auth from '../Auth/Auth';
-// import logout
 
 const Navbar = (props) => {
-    console.log(props)
+    
     return (
         <div className="navbar">
             <div className="navbar-list-styling">
@@ -22,9 +21,7 @@ const Navbar = (props) => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
-                    {/* link to logout.jsx */}
                     <li><Link to="/"><button onClick={props.clickLogout}>Logout</button></Link></li>
-                    <Redirect />
                 </ul>
             </div>
             <div className="navbar-route">
