@@ -6,7 +6,7 @@ import APIURL from '../../../helpers/environment';
 
 const PersonalScorecard = (props) => {
     const[results, setResults] = useState([]);
-    // const[id, setId] = useState(0);
+    
     
     const fetchPScorecards = () => {
 
@@ -33,22 +33,23 @@ const PersonalScorecard = (props) => {
         fetchPScorecards()
     }, [])
     
-    // const updateScorecard = (result) => {
-    //     fetch(`${APIURL}/scorecard/${result.id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Authorization': props.token
-    //         }
-    //     })
-    //     .then(() => fetchPScorecards())
-    // }
+
+    const DeleteScorecard = (result) => {
+        fetch(`${APIURL}/scorecard/${result}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            }
+        })
+        .then(() => fetchPScorecards())
+    }
 
     const viewConductor = () => {
         if (results === 0){
             return <PreScorecard />
         } else {
-            return <ChildScorecard results={results} />
+            return <ChildScorecard results={results} delete={DeleteScorecard} token={props.token} fetchPScorecards={fetchPScorecards}/>
         }
     }
     

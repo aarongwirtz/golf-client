@@ -19,14 +19,14 @@ const Navbar = (props) => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
-                    <li><Link to="/Auth"><button onClick={props.clickLogout}>Logout</button></Link></li>
+                    <li><Link to="/"><button onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
             </div>
             <div className="navbar-route">
                 <Switch>
                     <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
                     <Route exact path="/PersonalScorecard"><PersonalScorecard token={props.token}/></Route>
-                    {/* <Route exact path="/CreateScorecard"><CreateScorecard /></Route> */}
+                    <Route exact path="/CreateScorecard"><CreateScorecard /></Route>
                 </Switch>
             </div>
         </div>
