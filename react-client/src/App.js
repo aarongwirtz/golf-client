@@ -50,9 +50,7 @@ function App() {
         {/* <Auth updateToken={updateToken}/> */}
         <CreateScorecard />
         {/* <CommunityScorecard /> */}
-        {/* <CreateScorecard /> */}
-        <PersonalScorecard />
-        <PreScorecard />
+        {/* <PersonalScorecard /> */}
         
     </div>
   );

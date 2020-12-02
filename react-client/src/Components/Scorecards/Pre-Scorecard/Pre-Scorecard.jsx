@@ -4,10 +4,6 @@ import CreateScorecard from '../Create-Scorecard/Create-Scorecard';
 
 const PreScorecard = () => {
 
-    const handleClick = (event) => {
-        event.preventdefault()
-        return<CreateScorecard />
-    }
     return(
         <div>
             <h2>It looks like you haven't created any scorecards yet!</h2>
