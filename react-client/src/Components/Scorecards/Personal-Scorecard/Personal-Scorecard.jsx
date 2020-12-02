@@ -33,22 +33,27 @@ const PersonalScorecard = (props) => {
         fetchPScorecards()
     }, [])
     
-    // const updateScorecard = (result) => {
-    //     fetch(`${APIURL}/scorecard/${result.id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Authorization': props.token
-    //         }
-    //     })
-    //     .then(() => fetchPScorecards())
-    // }
+    const DeleteScorecard = (result) => {
+        fetch(`${APIURL}/scorecard/${result}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            }
+        })
+        .then(() => fetchPScorecards())
+    }
+
+    const TestFunction = (variable) => {
+
+        console.log("testing onClick"+variable)
+    }
 
     const viewConductor = () => {
         if (results === 0){
             return <PreScorecard />
         } else {
-            return <ChildScorecard results={results} />
+            return <ChildScorecard results={results} delete={DeleteScorecard} Test={TestFunction}/>
         }
     }
     

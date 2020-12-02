@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
+import APIURL from '../../../../helpers/environment'
 
 const ChildScorecard = (props) => {
+
+
     console.log(props)
     return(
         
@@ -80,7 +83,7 @@ const ChildScorecard = (props) => {
                         </tbody>
                     </table>
                     <button>Edit</button>
-                    <button onClick={props.deleteScorecard}>Delete</button>
+                    <button onClick={() => props.delete(result.id)}>Delete</button>
                 </div>
             )
         }
