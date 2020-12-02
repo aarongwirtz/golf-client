@@ -21,6 +21,7 @@ const Navbar = (props) => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
+                    <li><Link to="/CreateScorecard">Create New Scorecard</Link></li>
                     <li><Link to="/"><button onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
             </div>
