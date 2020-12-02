@@ -1,4 +1,5 @@
 import React, { useState , useEffect} from 'react';
+import APIURL from '../../../helpers/environment';
 
 
 
@@ -7,7 +8,7 @@ const CommunityScorecard = (props) => {
     const [results, setResults] = useState([]);
     
     useEffect (()=> {
-            fetch('http://localhost:3000/scorecard/', {
+            fetch(`${APIURL}/scorecard/`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
