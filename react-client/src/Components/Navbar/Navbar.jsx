@@ -16,15 +16,13 @@ const Navbar = (props) => {
     
     return (
         <div className="navbar">
-            <div className="navbar-list-styling">
-                <ul className="navbar-list list-unstyled">
-                    <li><img src={logo} alt="Team Golf Logo" /></li>
+                <ul className="navbar-list">
+                    <li><img className="logo" src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
                     <li><Link to="/CreateScorecard">Create Scorecard</Link></li>
-                    <li><Link to="/"><button onClick={props.clickLogout}>Logout</button></Link></li>
+                    <li><Link to="/"><button className="logoutBtn" onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
-            </div>
             <div className="navbar-route">
                 <Switch>
                     <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
