@@ -6,7 +6,7 @@ import APIURL from '../../../helpers/environment';
 
 const PersonalScorecard = (props) => {
     const[results, setResults] = useState([]);
-    // const[id, setId] = useState(0);
+    
     
     const fetchPScorecards = () => {
 
@@ -33,6 +33,7 @@ const PersonalScorecard = (props) => {
         fetchPScorecards()
     }, [])
     
+
     const DeleteScorecard = (result) => {
         fetch(`${APIURL}/scorecard/${result}`, {
             method: 'DELETE',
@@ -44,16 +45,11 @@ const PersonalScorecard = (props) => {
         .then(() => fetchPScorecards())
     }
 
-    const TestFunction = (variable) => {
-
-        console.log("testing onClick"+variable)
-    }
-
     const viewConductor = () => {
         if (results === 0){
             return <PreScorecard />
         } else {
-            return <ChildScorecard results={results} delete={DeleteScorecard} Test={TestFunction}/>
+            return <ChildScorecard results={results} delete={DeleteScorecard} token={props.token} fetchPScorecards={fetchPScorecards}/>
         }
     }
     
