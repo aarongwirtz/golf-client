@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import PreScorecard from '../Pre-Scorecard/Pre-Scorecard';
 import ChildScorecard from './Personal-Scorecard-child/Personal-Scorecard-Child'
-import APIURL from '../../../helpers/enviorment'
+import APIURL from '../../../helpers/environment';
+
 
 const PersonalScorecard = (props) => {
     const[results, setResults] = useState([])

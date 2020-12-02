@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import APIURL from '../../helpers/enviorment';
+import APIURL from '../../helpers/environment';
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -39,8 +39,8 @@ const Register = (props) => {
                 </FormGroup>
 
                 <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                    <Label htmlFor="password" type="password">Password</Label>
+                    <Input onChange={(e) => setPassword(e.target.value)} value={password} />
                 </FormGroup>
 
                 <Button type="submit">Login</Button>

@@ -1,5 +1,5 @@
 import React, { useState , useEffect} from 'react';
-import APIURL from '../../../helpers/enviorment';
+import APIURL from '../../../helpers/environment';
 
 
 
@@ -13,7 +13,7 @@ const CommunityScorecard = (props) => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': props.token
-
+    
                 }
             })
 
