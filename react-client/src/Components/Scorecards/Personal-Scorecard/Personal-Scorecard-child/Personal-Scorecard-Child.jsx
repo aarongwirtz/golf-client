@@ -1,7 +1,18 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 const ChildScorecard = (props) => {
+
+    //modal
+    const EditModal = (props) => {
+        const {
+            buttonLabel,
+            className
+        } = props;
+    }
+
+    // form states
     const [course, setCourse] = useState('');
     const [date, setDate] = useState('');
     const [conditions, setConditions] = useState('');
@@ -45,6 +56,11 @@ const ChildScorecard = (props) => {
     const [hole17, setHole17] = useState('');
     const [hole18, setHole18] = useState('');
     const [holetotal, setHoleTotal] = useState('');
+
+    //Modal states
+    const [modal, setModal] = useState(false)
+
+    const toggle = () => setModal(!modal);
 
     const UpdateScorecard = (resultId) => {
         fetch(`${APIURL}/scorecard/${resultId}`, {
@@ -181,7 +197,16 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <button >Edit</button>
+                    <Button color="danger" onClick={toggle}>Edit</Button>
+                    <Modal isOpen={modal} toggle={toggle} className={className}>
+                        <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
+                        <ModalBody>
+                            Form to be added
+                        </ModalBody>
+                        <ModalFooter>
+                            
+                        </ModalFooter>
+                    </Modal>
                     <button onClick={() => props.delete(result.id)}>Delete</button>
                 </div>
             )
