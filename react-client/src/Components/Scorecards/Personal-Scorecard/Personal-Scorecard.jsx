@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 
-const PersonalScorecard = () => {
+const PersonalScorecard = (props) => {
     const[username, setUsername] = useState('');
     const[results, setResults] = useState([])
 
@@ -11,7 +11,7 @@ const PersonalScorecard = () => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NzkxNDAyLCJleHAiOjE2MDY4Nzc4MDJ9.NxnxBr6bTaMCaRiCSlYtoH-845TL7o1aNztvEfpHCh0'
+                'Authorization': props.token
             }
         })
         .then(res => res.json())
@@ -19,7 +19,7 @@ const PersonalScorecard = () => {
             setResults(data)
             console.log(data)
         })
-        .catch(err => err)
+        .catch(err => console.log(err))
     }, [])
     
     
@@ -34,6 +34,7 @@ const PersonalScorecard = () => {
                         <h6>Difficulty: {result.difficultyRating}</h6>
                         <p>{result.date}</p>
                         <p>{result.conditions}</p>
+                        <p>{result.userName}</p>
                         <table>
                             <tbody>
                                 <tr>

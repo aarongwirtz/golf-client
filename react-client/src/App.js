@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import'bootstrap/dist/css/bootstrap.css';
 import Auth from './Components/Auth/Auth';
-import CommunityScorecard from './Components/Scorecards/Community-Scorecard/Community-Scorecard';
-import CreateScorecard from './Components/Scorecards/Create-Scorecard/Create-Scorecard';
-import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Personal-Scorecard';
-import PreScorecard from './Components/Scorecards/Pre-Scorecard/Pre-Scorecard';
 import Navbar from './Components/Navbar/Navbar';
+import PersonalScorecard from './Components/Scorecards/Personal-Scorecard/Personal-Scorecard'
+import PreScorecard from './Components/Scorecards/Pre-Scorecard/Pre-Scorecard'
 import {BrowserRouter as Router} from 'react-router-dom';
 
 
@@ -14,8 +12,14 @@ function App() {
 
 
   // letting the token get a value upon login
-  const [sessionToken, setSessionToken] = useState('');
+  const [sessionToken, setSessionToken] = useState('undefined');
   
+  //method meant to change view based on if there is a session token
+  const viewConductor = () => {
+    return sessionToken === undefined?  <Auth updateToken={updateToken}/> : <PersonalScorecard token={sessionToken} />
+  }
+
+
   // updating the token if the browser has stored one
   useEffect(() => {
     if (localStorage.getItem('token')){
@@ -41,10 +45,10 @@ function App() {
           <Navbar token={sessionToken} clickLogout={clearToken}/>
       </Router>
         <Auth updateToken={updateToken}/>
-        <CommunityScorecard />
+        {/* <CommunityScorecard /> */}
         {/* <CreateScorecard /> */}
         <PersonalScorecard />
-        {/* <PreScorecard /> */}
+        <PreScorecard />
         
     </div>
   );

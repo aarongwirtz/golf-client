@@ -9,7 +9,7 @@ import CommunityScorecard from '../Scorecards/Community-Scorecard/Community-Scor
 import PersonalScorecard from '../Scorecards/Personal-Scorecard/Personal-Scorecard';
 import logo from '../../assets/tgLogo.png';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div className="navbar">
             <div className="navbar-list-styling">
@@ -17,13 +17,13 @@ const Navbar = () => {
                     <li><img src={logo} alt="Team Golf Logo" /></li>
                     <li><Link to="/CommunityScorecard">View Community Scorecards</Link></li>
                     <li><Link to="/PersonalScorecard">View My Scorecards</Link></li>
-                    <li><Link to="/Auth"><Button onClick={props.clickLogout}>Logout</Button></Link></li>
+                    <li><Link to="/Auth"><button onClick={props.clickLogout}>Logout</button></Link></li>
                 </ul>
             </div>
             <div className="navbar-route">
                 <Switch>
-                    <Route exact path="/CommunityScorecard"><CommunityScorecard /></Route>
-                    <Route exact path="/PersonalScorecard"><PersonalScorecard /></Route>
+                    <Route exact path="/CommunityScorecard"><CommunityScorecard token={props.token}/></Route>
+                    <Route exact path="/PersonalScorecard"><PersonalScorecard token={props.token}/></Route>
                 </Switch>
             </div>
         </div>
