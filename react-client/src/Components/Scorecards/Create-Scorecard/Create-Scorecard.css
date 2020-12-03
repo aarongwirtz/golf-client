@@ -1,9 +1,20 @@
 
+#scorecardHeader {
+    background: url('../../../assets/scorecardHeader1.jpg');
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5em;
+    background-position: center;
+}
+
 form {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #b5d3e7;
+    background-color: #44a247;
     padding: 1em;
 }
 
@@ -27,11 +38,12 @@ h4 {
     width: 20%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 1.5em;
+    padding-bottom: 2em;
 }
 
 #row2 {
     padding-bottom: 1em;
+    padding-top: 2em;
 }
 
 #row2 input {
@@ -39,6 +51,18 @@ h4 {
     padding-left: 0.1em;
     padding-right: 0.5em;
     text-align: center;
+}
+
+.sandy1 {
+    background-color:#c9aa79;
+    margin: -1em;
+    padding: 1em;
+}
+
+.sandy2 {
+    background-color:#c9aa79;
+    margin: -1em;
+    padding: 1em;
 }
 
 #row3 {

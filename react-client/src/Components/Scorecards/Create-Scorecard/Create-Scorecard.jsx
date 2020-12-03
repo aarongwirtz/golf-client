@@ -116,12 +116,15 @@ const CreateScorecard = (props) => {
      <div className="main"> 
         <div className="mainDiv">
 
+            <div id="scorecardHeader">
             <h1>Create Scorecard</h1>
             <h4>For each hole played, enter the par and your score. Then, press "Submit your Score".</h4>
-                <div id="myform">
+            </div>
+
                 <Form id="form1" 
                     onSubmit={(e) => submitScore(e)}
                 >
+                <div className="sandy1">
                     <Row id="row1">
                         <h6>Enter Course Information Here</h6>
                         <Col>
@@ -145,7 +148,7 @@ const CreateScorecard = (props) => {
                             <Input bsSize="lg" name="DifficultyRating" type="text" onChange={(e) => setDifficulty(e.target.value)}/>
                         </Col>
                     </Row>
-
+                    </div>
                     <Row id="row2">
                     <h6>Enter Par of Each Hole Here</h6>
                         <Col>
@@ -243,7 +246,7 @@ const CreateScorecard = (props) => {
                             <Label for="Par Total">Par Total: </Label>
                             <Input bsSize="lg" name="Par Total" type="text" onChange={(e) => setParTotal(e.target.value)}/>
                         </Row>
-
+                    <div className="sandy2">
                     <Row id="row3">
                     <h6>Enter Your Score on Each Hole Here</h6>
                         <Col>
@@ -341,12 +344,12 @@ const CreateScorecard = (props) => {
                             <Label for="Hole Total">Total Score: </Label>
                             <Input bsSize="lg" name="Hole Total" type="text" onChange={(e) => setHoleTotal(e.target.value)}/>
                         </Row>
-                    <Button color="success">Submit Your Score</Button>
-                </Form>
+                    <Button size="lg" color="success">Submit Your Score</Button>
+                </div>
+            </Form>
 </div>
 
         </div>
-     </div>
  )  ; 
 };
 
