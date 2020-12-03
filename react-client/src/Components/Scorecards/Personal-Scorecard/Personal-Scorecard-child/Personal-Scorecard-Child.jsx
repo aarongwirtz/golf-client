@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
-
+import './Personal-Scorecard-Child.css';
 const ChildScorecard = (props) => {
 
     const [id, setId] = useState(0)    
@@ -110,7 +110,7 @@ const ChildScorecard = (props) => {
             }
         })
         .then(() => props.fetchPScorecards())
-        // .then(toggle)
+        .catch(err => console.log(err))
         
     }
 
@@ -123,13 +123,29 @@ const ChildScorecard = (props) => {
         
         props.results.map((result, index) =>{
             return(
-                <div key={index}>
-                    <h4>{result.courseName}</h4>
+                <div id="scoreresults" key={index}>
+                    {/* <h4>{result.courseName}</h4>
                     <h6>Difficulty: {result.difficultyRating}</h6>
                     <p>Length: {result.courseLength}</p>
                     <p>Date: {result.date}</p>
                     <p>Weather Conditions: {result.conditions}</p>
-                    <p>User: {result.userName}</p>
+                    <p>User: {result.userName}</p> */}
+                                
+                                <ul className="scorelist">
+                                <li className="course">{result.courseName}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Course:</li>
+                                    <li className="difficulty">{result.difficultyRating}</li>
+                                    <li className="title">Difficulty:</li>
+                                    <li className="date">{result.date}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Conditions:</li>
+                                    <li className="condition">{result.conditions}</li>
+                                    <li className="title">UserName:</li>
+                                    <li className="username">{result.userName}</li>
+                                </ul>
                     <table>
                         <tbody>
                             <tr>
@@ -152,6 +168,7 @@ const ChildScorecard = (props) => {
                                 <td>16</td>
                                 <td>17</td>
                                 <td>18</td>
+                                <td className="totalpar">Totals</td>
                             </tr>
                             <tr>
                                 <th>Par</th>
@@ -173,7 +190,7 @@ const ChildScorecard = (props) => {
                                 <td>{result.h16Par}</td>
                                 <td>{result.h17Par}</td>
                                 <td>{result.h18Par}</td>
-                                <td>Total Par: {result.totalPar}</td>
+                                <td className='totalpar'>{result.totalPar}</td>
                             </tr>
                             <tr>
                                 <th>Score</th>
@@ -195,11 +212,11 @@ const ChildScorecard = (props) => {
                                 <td>{result.h16Score}</td>
                                 <td>{result.h17Score}</td>
                                 <td>{result.h18Score}</td>
-                                <td>Total Score: {result.totalScore}</td>
+                                <td className='totalscore'>{result.totalScore}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <Button color="danger" onClick={toggle}>Edit</Button>
+                    <Button color="success" onClick={toggle}>Edit</Button>
                         <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
@@ -230,7 +247,7 @@ const ChildScorecard = (props) => {
                     <Row id="row2">
                         <Col>
                             <Label for="Par1">Par 1</Label>
-                            <Input name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
+                            <Input bsSize="lg" name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
                         </Col>
                             
                         <Col>
@@ -418,11 +435,10 @@ const ChildScorecard = (props) => {
                             <Input name="Hole Total" type="text" onChange={(e) => setHoleTotal(e.target.value)}/>
                         </Col>
                     </Row>
-                    <Button color="primary" >Submit Update</Button>
                 </Form>
                         </ModalBody>
                         <ModalFooter>
-                            
+                            <Button color="primary" >Submit Update</Button>
                             <Button color="secondary" onClick={toggle}>Close Update Modal</Button>
                         </ModalFooter>
                     </Modal>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import APIURL from '../../helpers/environment';
+import './Auth.css';
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
@@ -21,11 +22,12 @@ const Login = (props) => {
         ).then((data) => {
             props.updateToken(data.sessionToken)
         })
+        .catch(err => console.log(err))
     }
 
     return (
         <div>
-            <h1>Login</h1>
+            <h2>Returning User Login</h2>
             <Form onSubmit={handleSubmit}>
 
                 <FormGroup>
@@ -35,10 +37,10 @@ const Login = (props) => {
 
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                    <Input type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 </FormGroup>
 
-                <Button type="submit">Login</Button>
+                <Button size="lg" color="primary" type="submit">Login</Button>
 
             </Form>
         </div>

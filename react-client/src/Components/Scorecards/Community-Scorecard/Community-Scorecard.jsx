@@ -1,7 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import APIURL from '../../../helpers/environment';
-
-
+import '../Community-Scorecard/Community-Scorecard.css';
 
 
 const CommunityScorecard = (props) => {
@@ -30,12 +29,22 @@ const CommunityScorecard = (props) => {
                     <h1>Community Scorecards</h1>
                     {results.map((result, index) => {
                         return(
-                            <div key={index}>
-                                <h5>{result.courseName}</h5>
-                                <h6>{result.difficultyRating}</h6>
-                                <p>{result.date}</p>
-                                <p>{result.conditions}</p>
-                                <p>{result.userName}</p>
+                            <div id="scoreresults" key={index}>
+                                <ul className="scorelist">
+                                    <li className="course">{result.courseName}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Course:</li>
+                                    <li className="difficulty">{result.difficultyRating}</li>
+                                    <li className="title">Difficulty:</li>
+                                    <li className="date">{result.date}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Conditions:</li>
+                                    <li className="condition">{result.conditions}</li>
+                                    <li className="title">UserName:</li>
+                                    <li className="username">{result.userName}</li>
+                                </ul>
                                 <table>
                                 <tbody>
                                 <tr>
