@@ -22,6 +22,7 @@ const Register = (props) => {
         ).then((data) => {
             props.updateToken(data.sessionToken)
         })
+        .catch(err => console.log(err))
     }
 
     return (
