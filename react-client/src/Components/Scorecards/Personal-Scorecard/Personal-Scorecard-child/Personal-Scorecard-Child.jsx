@@ -198,17 +198,9 @@ const ChildScorecard = (props) => {
                                 <td>Total Score: {result.totalScore}</td>
                             </tr>
                         </tbody>
-<<<<<<< HEAD
                     </table>
                     <Button color="danger" onClick={toggle}>Edit</Button>
-                    {/* <Modal isOpen={modal} toggle={toggle} className={className}>
-=======
-                    </table>{console.log(id)}
-                    <Button color="success" onClick={() => handleClick(result.id)}>Edit</Button>
-                    {console.log("id = "+id)}
-                    <Modal isOpen={modal} toggle={toggle} id="updateModal">
-                        {console.log(result.id)}
->>>>>>> 6d1af79b7f9ac337a51b67c79407e3258d001c17
+                        <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
                         <Form id="form1" onSubmit={() => UpdateScorecard(id)}>
@@ -433,13 +425,8 @@ const ChildScorecard = (props) => {
                             
                             <Button color="secondary" onClick={toggle}>Close Update Modal</Button>
                         </ModalFooter>
-<<<<<<< HEAD
-                    </Modal> */}
-                    <button onClick={() => props.delete(result.id)}>Delete</button>
-=======
                     </Modal>
                     <Button color="danger" onClick={() => props.delete(result.id)}>Delete</Button>
->>>>>>> 6d1af79b7f9ac337a51b67c79407e3258d001c17
                 </div>
             )
         }
@@ -447,4 +434,4 @@ const ChildScorecard = (props) => {
     )
 }
 
-export default ChildScorecard
+export default ChildScorecard;
