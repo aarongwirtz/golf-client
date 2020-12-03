@@ -110,7 +110,7 @@ const ChildScorecard = (props) => {
             }
         })
         .then(() => props.fetchPScorecards())
-        // .then(toggle)
+        .catch(err => console.log(err))
         
     }
 

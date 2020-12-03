@@ -102,9 +102,10 @@ const CreateScorecard = (props) => {
                 ),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': localStorage.getItem('token')
             }
          })
+         .catch(err => console.log(err))
     }
     
          const submitScore = (event) => {
