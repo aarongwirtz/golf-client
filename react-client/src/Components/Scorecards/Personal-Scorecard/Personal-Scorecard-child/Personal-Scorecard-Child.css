@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 .modal-content{
     width: 200%;
+=======
+.modal-dialog{
+    text-align: center;
+
+}
+
+.modal-content{
+    width: 800px;
+>>>>>>> cc403b7c588b5ad6c5fa89287e941ef96c0edaf7
     display: flex;
     justify-content: center;
     margin-left: -200px;

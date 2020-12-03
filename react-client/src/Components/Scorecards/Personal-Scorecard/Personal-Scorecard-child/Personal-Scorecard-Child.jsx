@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
+<<<<<<< HEAD
 import './Personal-Scorecard-Child.css'
 
+=======
+import './Personal-Scorecard-Child.css';
+>>>>>>> cc403b7c588b5ad6c5fa89287e941ef96c0edaf7
 const ChildScorecard = (props) => {
 
     const [id, setId] = useState(0)    
