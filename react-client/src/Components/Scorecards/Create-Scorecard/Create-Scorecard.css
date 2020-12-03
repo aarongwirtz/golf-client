@@ -3,8 +3,10 @@ form {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #b5d3e7;
+    background-color: #44a247;
     padding: 1em;
+    border: 5px solid black;
+    border-radius: 25px;
 }
 
 h4 {
@@ -13,11 +15,13 @@ h4 {
 
 #row1 {
     padding-bottom: 1em;
+    
 }
 
 #row1 label {
     font-weight: bold;
     font-size: 1.2em;    
+    
 }
 
 #parTotal{
@@ -32,6 +36,17 @@ h4 {
 
 #row2 {
     padding-bottom: 1em;
+    
+}
+
+#row2 label {
+    font-size: 1em;
+    padding-left: 0.1em;
+    padding-right: 0.5em;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    max-width: 20px;
 }
 
 #row2 input {
@@ -39,10 +54,21 @@ h4 {
     padding-left: 0.1em;
     padding-right: 0.5em;
     text-align: center;
+    max-width: 70px;
 }
 
 #row3 {
     padding-bottom: 1em;
+}
+
+#row3 label{
+    font-size: 1em;
+    padding-left: 0.1em;
+    padding-right: 0.5em;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    max-width: 20px;
 }
 
 #row3 input {
@@ -50,6 +76,7 @@ h4 {
     padding-left: 0.1em;
     padding-right: 0.5em;
     text-align: center;
+    max-width: 70px;
 }
 
 #holeTotal{
