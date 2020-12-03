@@ -199,11 +199,9 @@ const ChildScorecard = (props) => {
                                 <td>Total Score: {result.totalScore}</td>
                             </tr>
                         </tbody>
-                    </table>{console.log(id)}
-                    <Button color="success" onClick={() => handleClick(result.id)}>Edit</Button>
-                    {console.log("id = "+id)}
-                    <Modal isOpen={modal} toggle={toggle} id="updateModal">
-                        {console.log(result.id)}
+                    </table>
+                    <Button color="danger" onClick={toggle}>Edit</Button>
+                        <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
                         <Form id="form1" onSubmit={() => UpdateScorecard(id)}>
@@ -437,4 +435,4 @@ const ChildScorecard = (props) => {
     )
 }
 
-export default ChildScorecard
+export default ChildScorecard;
