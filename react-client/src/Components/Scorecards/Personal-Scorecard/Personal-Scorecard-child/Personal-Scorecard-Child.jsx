@@ -135,9 +135,9 @@ const ChildScorecard = (props) => {
                                 <li className="course">{result.courseName}</li>
                                 </ul>
                                 <ul>
-                                    <li className="title">Course:</li>
-                                    <li className="difficulty">{result.difficultyRating}</li>
                                     <li className="title">Difficulty:</li>
+                                    <li className="difficulty">{result.difficultyRating}</li>
+                                    <li className="title">Date:</li>
                                     <li className="date">{result.date}</li>
                                 </ul>
                                 <ul>
@@ -435,10 +435,12 @@ const ChildScorecard = (props) => {
                             <Input name="Hole Total" type="text" onChange={(e) => setHoleTotal(e.target.value)}/>
                         </Col>
                     </Row>
+                    <Button color="primary" >Submit Update</Button>
+
                 </Form>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" >Submit Update</Button>
+                            
                             <Button color="secondary" onClick={toggle}>Close Update Modal</Button>
                         </ModalFooter>
                     </Modal>

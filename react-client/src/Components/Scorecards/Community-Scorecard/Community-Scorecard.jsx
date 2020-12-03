@@ -34,9 +34,9 @@ const CommunityScorecard = (props) => {
                                     <li className="course">{result.courseName}</li>
                                 </ul>
                                 <ul>
-                                    <li className="title">Course:</li>
-                                    <li className="difficulty">{result.difficultyRating}</li>
                                     <li className="title">Difficulty:</li>
+                                    <li className="difficulty">{result.difficultyRating}</li>
+                                    <li className="title">Date:</li>
                                     <li className="date">{result.date}</li>
                                 </ul>
                                 <ul>
