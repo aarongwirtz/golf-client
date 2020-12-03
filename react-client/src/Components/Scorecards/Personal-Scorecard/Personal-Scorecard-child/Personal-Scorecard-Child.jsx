@@ -216,7 +216,7 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <Button color="success" onClick={toggle}>Edit</Button>
+                    <Button color="success" onClick={() => handleClick(result.id)}>Edit</Button>
                         <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
@@ -247,7 +247,7 @@ const ChildScorecard = (props) => {
                     <Row id="row2">
                         <Col>
                             <Label for="Par1">Par 1</Label>
-                            <Input bsSize="lg" name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
+                            <Input  name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
                         </Col>
                             
                         <Col>
