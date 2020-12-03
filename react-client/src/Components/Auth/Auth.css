@@ -1,1 +1,27 @@
- 
+img {
+    padding-top: 3em;
+}
+
+.authContainer {
+    margin-bottom: 5em;
+}
+
+.welcomeDiv {
+    background: url('../../assets/scorecardHeader1.jpg');
+    padding: 0.2em;
+    margin-top: 1.5em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

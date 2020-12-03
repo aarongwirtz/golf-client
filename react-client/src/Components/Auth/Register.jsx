@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import APIURL from '../../helpers/environment';
+import './Auth.css';
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const Register = (props) => {
 
     return (
         <div>
-            <h1>Register Below</h1>
+            <h2>New to TeamGolf? Sign up Now!</h2>
             <Form onSubmit = {handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">E-mail</Label>
@@ -41,10 +42,10 @@ const Register = (props) => {
 
                 <FormGroup>
                     <Label htmlFor="password" type="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <Input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
                 </FormGroup>
 
-                <Button type="submit">Login</Button>
+                <Button size="lg" color="primary" type="submit">Login</Button>
 
             </Form>
         </div>

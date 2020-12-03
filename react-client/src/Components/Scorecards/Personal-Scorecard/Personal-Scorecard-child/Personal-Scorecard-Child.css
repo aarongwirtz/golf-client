@@ -1,7 +1,7 @@
 .modal-content{
-    width: 200%;
+    width: 250%;
     display: flex;
     justify-content: center;
-    margin-left: -200px;
+    margin-left: -15em;
     margin-top: 8em;
 }
