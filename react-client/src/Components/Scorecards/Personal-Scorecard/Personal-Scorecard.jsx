@@ -55,7 +55,6 @@ const PersonalScorecard = (props) => {
     }
     
     
-
     return (
         <div className="main">
             <div className="mainDiv">
