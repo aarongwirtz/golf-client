@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
+import './Personal-Scorecard-Child.css'
 
 const ChildScorecard = (props) => {
 
@@ -110,7 +111,7 @@ const ChildScorecard = (props) => {
             }
         })
         .then(() => props.fetchPScorecards())
-        // .then(toggle)
+        .catch(err => console.log(err))
         
     }
 
@@ -199,7 +200,7 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <Button color="danger" onClick={toggle}>Edit</Button>
+                    <Button color="success" onClick={toggle}>Edit</Button>
                         <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
@@ -230,7 +231,7 @@ const ChildScorecard = (props) => {
                     <Row id="row2">
                         <Col>
                             <Label for="Par1">Par 1</Label>
-                            <Input name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
+                            <Input bsSize="lg" name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
                         </Col>
                             
                         <Col>
