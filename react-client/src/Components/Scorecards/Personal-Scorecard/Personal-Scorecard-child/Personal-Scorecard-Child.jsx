@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
+import './Personal-Scorecard-Child.css';
 
 const ChildScorecard = (props) => {
 

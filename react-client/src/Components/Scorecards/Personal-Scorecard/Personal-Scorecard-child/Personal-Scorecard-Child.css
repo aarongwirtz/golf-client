@@ -1,3 +1,13 @@
-#updateModal{
-    width: 70%;
+
+.modal-dialog{
+    text-align: center;
+
+}
+
+.modal-content{
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    margin-left: -200px;
+    margin-top: 8em;
 }
