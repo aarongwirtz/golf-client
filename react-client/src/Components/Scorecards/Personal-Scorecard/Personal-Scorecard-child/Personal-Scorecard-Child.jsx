@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import './Create-Scorecard.css';
-import APIURL from '../../../helpers/environment';
+import React, {useState} from 'react'
+import APIURL from '../../../../helpers/environment'
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
 
+const ChildScorecard = (props) => {
 
-const CreateScorecard = (props) => {
+    const [id, setId] = useState(0)    
 
+    // form states
     const [course, setCourse] = useState('');
-    const [date, setDate] = useState(''  );
+    const [date, setDate] = useState('');
     const [conditions, setConditions] = useState('');
     const [courselength, setCourseLength] = useState('');
     const [difficulty, setDifficulty] = useState('');
@@ -50,10 +51,14 @@ const CreateScorecard = (props) => {
     const [hole18, setHole18] = useState('');
     const [holetotal, setHoleTotal] = useState('');
 
+    //Modal states
+    const [modal, setModal] = useState(false)
 
-    const fetchResults =() => {
-        fetch(`${APIURL}/scorecard/create`, {
-            method: 'POST',
+    const toggle = () => setModal(!modal);
+
+    const UpdateScorecard = (resultId) => {
+        fetch(`${APIURL}/scorecard/${resultId}`, {
+            method: 'PUT',
             body: JSON.stringify ({
                 courseName: course,
                 date: date,
@@ -62,7 +67,7 @@ const CreateScorecard = (props) => {
                 difficultyRating: difficulty,
                 h1Par: par1,
                 h2Par: par2,
-                h3Par: par3,
+                h3Par:par3,
                 h4Par: par4,
                 h5Par: par5,
                 h6Par: par6,
@@ -79,51 +84,129 @@ const CreateScorecard = (props) => {
                 h17Par: par17,
                 h18Par: par18,
                 totalPar: partotal,
-                h1Score: hole1,
-                h2Score: hole2,
-                h3Score: hole3,
-                h4Score: hole4,
-                h5Score: hole5,
-                h6Score: hole6,
-                h7Score: hole7,
-                h8Score: hole8,
-                h9Score: hole9,
-                h10Score: hole10,
-                h11Score: hole11,
-                h12Score: hole12,
-                h13Score: hole13,
-                h14Score: hole14,
-                h15Score: hole15,
-                h16Score: hole16,
-                h17Score: hole17,
-                h18Score: hole18,
+                h1Score:hole1,
+                h2Score:hole2,
+                h3Score:hole3,
+                h4Score:hole4,
+                h5Score:hole5,
+                h6Score:hole6,
+                h7Score:hole7,
+                h8Score:hole8,
+                h9Score:hole9,
+                h10Score:hole10,
+                h11Score:hole11,
+                h12Score:hole12,
+                h13Score:hole13,
+                h14Score:hole14,
+                h15Score:hole15,
+                h16Score:hole16,
+                h17Score:hole17,
+                h18Score:hole18,
                 totalScore: holetotal
-            },
-                ),
+            }),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
+                'Authorization': props.token
             }
-         })
-         .catch(err => console.log(err))
+        })
+        .then(() => props.fetchPScorecards())
+        // .then(toggle)
+        
     }
-    
-         const submitScore = (event) => {
-            fetchResults();
-            event.preventDefault();
-          }
 
- return (
-     <div className="main"> 
-        <div className="mainDiv">
+    const handleClick = (resultId) => {
+        toggle();
+        setId(resultId);
+    }
 
-            <h1>Create Scorecard</h1>
-                <div id="myform">
-                <Form id="form1" 
-                    onSubmit={(e) => submitScore(e)}
-                >
+    return(
+        
+        props.results.map((result, index) =>{
+            return(
+                <div key={index}>
+                    <h4>{result.courseName}</h4>
+                    <h6>Difficulty: {result.difficultyRating}</h6>
+                    <p>Length: {result.courseLength}</p>
+                    <p>Date: {result.date}</p>
+                    <p>Weather Conditions: {result.conditions}</p>
+                    <p>User: {result.userName}</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Hole</th>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <th>Par</th>
+                                <td>{result.h1Par}</td>
+                                <td>{result.h2Par}</td>
+                                <td>{result.h3Par}</td>
+                                <td>{result.h4Par}</td>
+                                <td>{result.h5Par}</td>
+                                <td>{result.h6Par}</td>
+                                <td>{result.h7Par}</td>
+                                <td>{result.h8Par}</td>
+                                <td>{result.h9Par}</td>
+                                <td>{result.h10Par}</td>
+                                <td>{result.h11Par}</td>
+                                <td>{result.h12Par}</td>
+                                <td>{result.h13Par}</td>
+                                <td>{result.h14Par}</td>
+                                <td>{result.h15Par}</td>
+                                <td>{result.h16Par}</td>
+                                <td>{result.h17Par}</td>
+                                <td>{result.h18Par}</td>
+                                <td>Total Par: {result.totalPar}</td>
+                            </tr>
+                            <tr>
+                                <th>Score</th>
+                                <td>{result.h1Score}</td>
+                                <td>{result.h2Score}</td>
+                                <td>{result.h3Score}</td>
+                                <td>{result.h4Score}</td>
+                                <td>{result.h5Score}</td>
+                                <td>{result.h6Score}</td>
+                                <td>{result.h7Score}</td>
+                                <td>{result.h8Score}</td>
+                                <td>{result.h9Score}</td>
+                                <td>{result.h10Score}</td>
+                                <td>{result.h11Score}</td>
+                                <td>{result.h12Score}</td>
+                                <td>{result.h13Score}</td>
+                                <td>{result.h14Score}</td>
+                                <td>{result.h15Score}</td>
+                                <td>{result.h16Score}</td>
+                                <td>{result.h17Score}</td>
+                                <td>{result.h18Score}</td>
+                                <td>Total Score: {result.totalScore}</td>
+                            </tr>
+                        </tbody>
+                    </table>{console.log(id)}
+                    <Button color="success" onClick={() => handleClick(result.id)}>Edit</Button>
+                    {console.log("id = "+id)}
+                    <Modal isOpen={modal} toggle={toggle} id="updateModal">
+                        {console.log(result.id)}
+                        <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
+                        <ModalBody>
+                        <Form id="form1" onSubmit={() => UpdateScorecard(id)}>
                     <Row id="row1">
-                        <h6>Enter Course Information Here</h6>
                         <Col>
                             <Label for="CourseName">Course Name</Label>
                             <Input name="CourseName" type="text" onChange={(e) => setCourse(e.target.value)} />
@@ -147,7 +230,6 @@ const CreateScorecard = (props) => {
                     </Row>
 
                     <Row id="row2">
-                    <h6>Enter Par of Each Hole Here</h6>
                         <Col>
                             <Label for="Par1">Par 1</Label>
                             <Input name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
@@ -244,7 +326,6 @@ const CreateScorecard = (props) => {
                     </Row>
 
                     <Row id="row3">
-                    <h6>Enter Your Score on Each Hole Here</h6>
                         <Col>
                             <Label for="Hole1">Hole 1</Label>
                             <Input name="Hole1" type="text" onChange={(e) => setHole1(e.target.value)}/>
@@ -339,15 +420,20 @@ const CreateScorecard = (props) => {
                             <Input name="Hole Total" type="text" onChange={(e) => setHoleTotal(e.target.value)}/>
                         </Col>
                     </Row>
-                    <Button className="submit">Submit Your Score</Button>
+                    <Button color="primary" >Submit Update</Button>
                 </Form>
-</div>
+                        </ModalBody>
+                        <ModalFooter>
+                            
+                            <Button color="secondary" onClick={toggle}>Close Update Modal</Button>
+                        </ModalFooter>
+                    </Modal>
+                    <Button color="danger" onClick={() => props.delete(result.id)}>Delete</Button>
+                </div>
+            )
+        }
+        )
+    )
+}
 
-
-
-        </div>
-     </div>
- )  ; 
-};
-
-export default CreateScorecard;
+export default ChildScorecard
