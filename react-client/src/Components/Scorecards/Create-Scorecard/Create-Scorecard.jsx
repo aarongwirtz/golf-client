@@ -123,7 +123,7 @@ const CreateScorecard = (props) => {
                     onSubmit={(e) => submitScore(e)}
                 >
                     <Row id="row1">
-                        <h6>Enter Course Information Here</h6>
+                        {/* <h6>Enter Course Information Here</h6> */}
                         <Col>
                             <Label for="CourseName">Course Name</Label>
                             <Input bsSize="lg" name="CourseName" type="text" onChange={(e) => setCourse(e.target.value)} />
@@ -147,7 +147,7 @@ const CreateScorecard = (props) => {
                     </Row>
 
                     <Row id="row2">
-                    <h6>Enter Par of Each Hole Here</h6>
+                    {/* <h6>Enter Par of Each Hole Here</h6> */}
                         <Col>
                             <Label for="Par1">Par 1</Label>
                             <Input bsSize="lg" name="Par1" type="text" onChange={(e) => setPar1(e.target.value)}/>
@@ -245,7 +245,7 @@ const CreateScorecard = (props) => {
                         </Row>
 
                     <Row id="row3">
-                    <h6>Enter Your Score on Each Hole Here</h6>
+                    {/* <h6>Enter Your Score on Each Hole Here</h6> */}
                         <Col>
                             <Label for="Hole1">Hole 1</Label>
                             <Input bsSize="lg" name="Hole1" type="text" onChange={(e) => setHole1(e.target.value)}/>

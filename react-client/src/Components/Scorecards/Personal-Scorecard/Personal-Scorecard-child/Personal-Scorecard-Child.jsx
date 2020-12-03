@@ -200,7 +200,7 @@ const ChildScorecard = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <Button color="danger" onClick={toggle}>Edit</Button>
+                    <Button color="success" onClick={toggle}>Edit</Button>
                         <Modal isOpen={modal} toggle={toggle} id="updateModal">
                         <ModalHeader toggle={toggle}>Edit Scorecard</ModalHeader>
                         <ModalBody>
