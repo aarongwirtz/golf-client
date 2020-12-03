@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import APIURL from '../../../../helpers/environment'
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, Label, Input} from 'reactstrap';
-import './Personal-Scorecard-Child.css'
-
+import './Personal-Scorecard-Child.css';
 const ChildScorecard = (props) => {
 
     const [id, setId] = useState(0)    
@@ -124,13 +123,29 @@ const ChildScorecard = (props) => {
         
         props.results.map((result, index) =>{
             return(
-                <div key={index}>
-                    <h4>{result.courseName}</h4>
+                <div id="scoreresults" key={index}>
+                    {/* <h4>{result.courseName}</h4>
                     <h6>Difficulty: {result.difficultyRating}</h6>
                     <p>Length: {result.courseLength}</p>
                     <p>Date: {result.date}</p>
                     <p>Weather Conditions: {result.conditions}</p>
-                    <p>User: {result.userName}</p>
+                    <p>User: {result.userName}</p> */}
+                                
+                                <ul className="scorelist">
+                                <li className="course">{result.courseName}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Course:</li>
+                                    <li className="difficulty">{result.difficultyRating}</li>
+                                    <li className="title">Difficulty:</li>
+                                    <li className="date">{result.date}</li>
+                                </ul>
+                                <ul>
+                                    <li className="title">Conditions:</li>
+                                    <li className="condition">{result.conditions}</li>
+                                    <li className="title">UserName:</li>
+                                    <li className="username">{result.userName}</li>
+                                </ul>
                     <table>
                         <tbody>
                             <tr>
@@ -153,6 +168,7 @@ const ChildScorecard = (props) => {
                                 <td>16</td>
                                 <td>17</td>
                                 <td>18</td>
+                                <td className="totalpar">Totals</td>
                             </tr>
                             <tr>
                                 <th>Par</th>
@@ -174,7 +190,7 @@ const ChildScorecard = (props) => {
                                 <td>{result.h16Par}</td>
                                 <td>{result.h17Par}</td>
                                 <td>{result.h18Par}</td>
-                                <td>Total Par: {result.totalPar}</td>
+                                <td className='totalpar'>{result.totalPar}</td>
                             </tr>
                             <tr>
                                 <th>Score</th>
@@ -196,7 +212,7 @@ const ChildScorecard = (props) => {
                                 <td>{result.h16Score}</td>
                                 <td>{result.h17Score}</td>
                                 <td>{result.h18Score}</td>
-                                <td>Total Score: {result.totalScore}</td>
+                                <td className='totalscore'>{result.totalScore}</td>
                             </tr>
                         </tbody>
                     </table>

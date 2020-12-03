@@ -1,7 +1,80 @@
+.modal-dialog{
+    text-align: center;
+
+}
+
 .modal-content{
     width: 200%;
     display: flex;
     justify-content: center;
-    margin-left: -200px;
+    margin-left: -15em;
     margin-top: 8em;
+}
+
+
+
+
+
+
+
+#scoreresults{
+    border: 2px solid #28782b;
+    text-align: left;
+    margin-bottom: 3em;
+    background-color: #c9aa79;
+}
+.scorelist{
+    list-style-type: none;
+}
+li{
+    display: inline;
+    padding-right: 1em;
+}
+.title{
+    font-weight: bold;
+    color: black;
+}
+.course{
+    font-size: 2em;
+    font-weight: bold;
+    color: #28782b;
+}
+
+.difficulty{
+    color: #28782b;
+    font-weight: bold;
+}
+
+.date{
+    color: #28782b;
+    font-weight: bold;
+}
+
+.condition{
+    color: #28782b;
+    font-weight: bold;
+}
+
+.username{
+    color: #28782b;
+    font-weight: bold;
+}
+
+
+table { 
+    border-collapse: collapse; 
+    width: 100%;
+    border-top: 2px solid #28782b;
+} 
+  
+th, td { 
+    text-align: left; 
+    padding: 8px; 
+} 
+  
+tr:nth-child(even) { 
+    background-color: #44a247; 
+}
+.totalpar, .totalscore {
+    font-weight: bold;
 }
