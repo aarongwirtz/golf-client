@@ -1,3 +1,6 @@
-#updateModal{
-    width: 70%;
+.modal-content{
+    width: 750px;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%
 }
